@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}HomePage{% endblock %}
+{% block body %}
+    <h1>Hello, World!</h1>
+    <p> from awesome<p>
+    
+    {%if is_logged_in %}    
+    <h2>List of Computer science cources </h2>
+    <ul>
+    {% for course in courses %}
+    <li>{{course}}</li>
+    {% endfor %}
+    </ul> 
+    <img src="{{url_for('static', filename='images/spidey.jpg')}}" alt="flash" >
+    {% else %}
+    <p>Please login to see the list </p>
+    {% endif %}
+    {% endblock %} 
